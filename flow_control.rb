@@ -172,10 +172,35 @@ range(-3)
 
 # Exercise 5 - before viewing solution
 
+# This error appears because the method needs an 'end' and the if statement needs an 'end'. 
+# It can be fixed by adding another 'end' keyword. It looks like the if statement needs
+# the 'end' added to it, based on the indentations.
+
+# After solution
+
+# The 'end' keyyword is not applied to the method, it is applied to the if statement
+# because that was the last thing to be read that needed an end statement. The code is
+# read in order so it is applied in order. It has nothing to do with indentation.
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Exercise 6 - before viewing solution
 
+# 1. Error because the result of a math problem cannot equal a string.
+# 2. Error because a string does not equal an integer.
+# 3. False because the strings are the same length.
+# 4. False because the strings are the same length.
+# 5. False because the string on the left is shorter than the string on the right.
+# 6. True because the string on the right is longer than the string on the left. 
+
+# After solution
+
+# 1. Correct
+# 2. False because a string and an integer are not equal. This is not an error, it's just a false statement.
+# 3. Correct
+# 4. True because the strings are compared left to right. The 7 is read as greater than 6 even though
+#    it is a number represented as a string.
+# 5. Correct
+# 6. Correct
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
