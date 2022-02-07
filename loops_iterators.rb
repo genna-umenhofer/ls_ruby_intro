@@ -102,30 +102,148 @@ end
 
 # For Loops
 
+x = gets.chomp.to_i
 
+for i in 1..x do
+  puts x - i
+end
+
+puts "Done!"
+
+
+
+x = [1, 2, 3, 4, 5]
+
+for i in x.reverse do
+  puts i
+end
+
+puts "Done!"
+
+# For loops also do not have thier own scopes. 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Conditional Loops Within Loops
 
+x = 0 
+
+while x <= 10
+  if x.odd?
+    puts x
+  end
+  x += 1
+end
+
+# 'Next' will jump from the line to the next iteration without doing the code beneath it.
+# 'Break' will exit the loop and not do any more code from it.
+
+x = 0
+
+while x <= 20
+  if x == 3
+    x += 1
+    next
+  elsif x == 20 
+    break
+  elsif x.odd?
+    puts x
+  end
+  x += 1
+end
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Iterators
+
+# Iterators are methods that naturally loop over a given set of data and operate on 
+# each item in the set of data.
+
+names = ['Lily', 'Lilah', 'Lacey', 'Lauren']
+
+names.each { |name| puts name }
+
+# A block is just a set of code to be executed. Since this code can fit in one line, we can
+# use the curly braces to contain it. For multiline code, use the words 'do' and 'end'.
+
+names = ['Lily', 'Lilah', 'Lacey', 'Lauren']
+x = 1                             # This x is called the counter.
+
+names.each do |name|
+  puts "#{x}. #{name}"
+  x += 1
+end
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Recursion
 
+def doubler(start)
+  puts start
+  if start < 10
+    doubler(start * 2)
+  end
+end
+
+doubler(2)
+
+
+
+def fibonacci(number)
+  if number < 2
+    number
+  else
+    fibonacci(number - 1) + fibonacci(number - 2)
+  end
+end
+
+puts fibonacci(6)
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 1
+# Exercise 1 - before viewing solution
+
+# This each method will return 2 / 3 / 4 / 5 / 6 becuase it will iterate over each number
+# in the array and add one to the number. 
+
+# After viewing solution
+
+# This code does not return anything because it doesn't store the new values of x. The output 
+# is just the same array, but it will not be printed to the screen.
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 2
+# Exercise 2 - before solution
+
+puts "Do you want to go?"
+x = gets.chomp.to_s
+
+while x != "STOP"
+  puts "Do you want to stop?"
+  x = gets.chomp.to_s
+end
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 3
+# Exercise 3 - before viewing solution
+
+def countdown(start)
+  if start >= 0
+    puts start
+    start -= 1
+    countdown(start)
+  end
+end
+countdown(8)
+
+# after viewing solution
+
+def countdown(start)
+  if start >= 0
+    puts start
+    countdown(start - 1)      # I changed this to be more succinct
+  end
+end
+countdown(8)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
