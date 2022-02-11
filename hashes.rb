@@ -125,11 +125,62 @@ name_and_age.each { |k| puts k }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 1
+# Exercise 1 - before solution
+
+family = {  uncles: ["bob", "joe", "steve"],
+  sisters: ["jane", "jill", "beth"],
+  brothers: ["frank","rob","david"],
+  aunts: ["mary","sally","susan"]
+}
+
+family.select {|k,v| if k == "sisters" || "brothers" puts k puts v}
+
+# after solution - I was not able to figure this one out without looking at the solution
+# I'm still not sure how to get it to be just one array like the solution shows. 
+
+family = {  uncles: ["bob", "joe", "steve"],
+  sisters: ["jane", "jill", "beth"],
+  brothers: ["frank","rob","david"],
+  aunts: ["mary","sally","susan"]
+}
+
+direct_family = family.select {|k,v| k == :sisters || k == :brothers}
+
+direct_family.values.flatten
+
+puts direct_family
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Exercise 2
+
+# merge creates a new hash while merge! mutates the original hash
+
+# h1 = { fruits: ["apple", "orange", "pear"]}
+
+# h2 = { fruits: ["banana", "lemon", "grape"]}
+
+h1 = {
+  "fruit" => "apple",
+  "vegetable" => "carrot"
+}
+
+h2 = {
+  "fruit" => "orange",
+  "vegetable" => "potato"
+}
+
+puts h1         
+puts h2         
+h1.merge(h2)
+puts h1         
+puts h2
+
+puts h1
+puts h2
+h1.merge!(h2)
+puts h1
+puts h2
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
