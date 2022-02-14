@@ -184,22 +184,81 @@ puts h2
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 3
+# Exercise 3 - before viewing solution (no changes after viewing solution)
+
+my_hash = { 1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
+
+my_hash.each_key { |k| puts "One of the keys is #{k}" }
+my_hash.each_value { |v| puts "One of the values is #{v}" }
+my_hash.each { |k, v| puts "#{k} is #{v}" }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 4
+# Exercise 4 - before viewing solution
+
+# I would access the name of the person by using the key in square brackets after the 
+# name of the hash. It would look like:
+
+puts person[name]
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 5
+# Exercise 5 - before viewing solution
+
+# I could use the method .value? to find out if there is a specific value in a hash.
+
+my_hash = { 1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
+
+p my_hash.value?("three")     # returns true
+
+p my_hash.value?("seven")     # returns false
+
+
+# after viewing solution
+
+def verify_value(string)
+  my_hash = { 1 => "one", 2 => "two", 3 => "three",}
+  if my_hash.value?(string)
+    p "It's there, Captain!"
+  else
+    p "It's not there, Captain."
+  end
+end
+
+verify_value("seven")   # returns "It's not there, Captain."
+verify_value("three")   # returns "It's there, Captain!"
+
+# the drawback to this solution is that the has has to be defined withing the function
+# otherwise, when I tried to put the hash before the function, then the function was not
+# able to see it.
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 6
+# Exercise 6 - Before viewing the solution
+
+# The difference between the two hashed is that one uses the old syntax "=>" and one uses
+# the new syntax ":"
+
+# After viewing the solution
+
+# The purpose of using the two different syntaxes is that the keys are different types.
+# The first key is a symbol x and the second key is a string based on the variable x.
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Exercise 7
+# Exercise 7 - before viewing solution (no changes after solution)
+
+# I think this error means that there is not method called keys for an array. Keys are 
+# for hashes. 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
